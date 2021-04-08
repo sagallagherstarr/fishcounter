@@ -2,7 +2,7 @@
 
 import logging
 
-log = logging.getLogger("setup.py")
+log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-log.debug("setup.py")
+log.debug(__name__)
