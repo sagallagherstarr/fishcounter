@@ -10,6 +10,8 @@ BASE_DIR = Path(__file__).parents[0]
 
 baseDirStr = str(BASE_DIR)
 
+CONFIG_FILE = str(BASE_DIR / "config.py")
+
 STATIC_DIR = BASE_DIR / "frontend" / "dist"
 staticDirStr = str(STATIC_DIR)
 log.debug("staticDirStr is '%s'", staticDirStr)
@@ -23,14 +25,23 @@ ENTRY_POINT = "/"
 # BASE_DIR = os.path.dirname(__file__)
 
 debug = True
-secret_key = "******"
+secret_key = "*fink^^beam98%"
 
-routers_path = os.path.join(BASE_DIR, "routers")
+# routers_path = os.path.join(BASE_DIR, "routers")
 api_prefix = "/api"
+routers_path = BASE_DIR / "backend" / "routers"
 trailing_slash = False
 
-mysql_host = "127.0.0.1"
-mysql_port = 3306
-mysql_username = "fishcounter"
-mysql_password = "temppw1"
-mysql_dbname = "fishcounter"
+databaseHost = "127.0.0.1"
+databasePort = 3306
+databaseUser = "fishcounter"
+databasePassword = "temppw1"
+databaseName = "fishcounter"
+databaseTestName = "fishcounter_test"
+
+tornadoSettings = {
+    "debug" : True,
+    "cookie_secret": "__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__", # TODO
+    "login_url": "/login",
+    "xsrf_cookies": True,
+}
